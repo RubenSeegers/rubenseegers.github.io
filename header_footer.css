@@ -1,11 +1,12 @@
   header {
-    color: white;
+    color: wheat;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 1rem;
     text-align: center;
     position: relative;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   }
+
   footer {
     display: flex;
     flex-direction: column;
@@ -15,6 +16,7 @@
     position: relative;
     width: 100%;
     bottom: 0;
+    color: wheat;
     box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.4);
 
   }
@@ -30,13 +32,16 @@
   }
 
   header button{
-    border: solid black 3px;
+    border: solid black;
     border-radius: 5px;
     min-height: 2.5rem;
     min-width: 4rem;
     box-sizing: border-box;
+    background-image: linear-gradient(to right, #3b1f7b, #0f1042);
+    color: wheat;
+
   }
 
   header button:hover {
-    background-color: gray;
+    background-image: repeating-linear-gradient(to left, #3b1f7b, #0f1042);
   }
