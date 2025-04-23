@@ -12,7 +12,7 @@
     align-items: center;
     text-align: center;
     padding: 1rem;
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 0;
     box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.4);
