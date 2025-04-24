@@ -1,30 +1,10 @@
+
   header {
-    color: wheat;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 1rem;
+    font-style: italic;
     text-align: center;
-    position: relative;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   }
 
-  footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-    color: wheat;
-    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.4);
-
-  }
-
-  header, footer {
-    background-image: linear-gradient(to right, #0f1042, #3b1f7b);
-  }
-  
   header nav a{
     text-decoration: none;
     margin: 5px;
@@ -32,16 +12,61 @@
   }
 
   header button{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
     border: solid black;
+    font-style: italic;
     border-radius: 5px;
     min-height: 2.5rem;
     min-width: 4rem;
     box-sizing: border-box;
     background-image: linear-gradient(to right, #3b1f7b, #0f1042);
     color: wheat;
-
+    text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
   }
 
   header button:hover {
     background-image: repeating-linear-gradient(to left, #3b1f7b, #0f1042);
+  }
+
+  header, footer {
+    color: wheat;
+    padding: 1rem;
+    position: relative;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: linear-gradient(to right, #0f1042, #3b1f7b);
+    text-shadow: 
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+    -2px  0px 0 #000,
+     2px  0px 0 #000,
+     0px -2px 0 #000,
+     0px  2px 0 #000;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.4);
+    margin-top: 2rem;
+  }
+
+  footer nav a {
+    text-decoration: none;
+  }
+  footer p {
+    margin: 5px;
+  }
+  
+
+  @media (max-width: 470px){
+  
   }
