@@ -1,43 +1,126 @@
-body {
+html, body {
+    height: 100%;
     margin: 0;
-    background-color: #1a1a2e;
-    color: white;
+    display: flex;
+    flex-direction: column;
 }
 
-.website-header h1 {
+body {
+    margin: 0;
+    background-image: linear-gradient(to right, #3b1f7b, #0f1042);    color: white;
+}
+
+main {
+    flex: 1;
+    margin: 5%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+#main-header.hidden {
+  transform: translateY(-100%);
+}
+
+h1 {
     margin: auto;
-    width: 50%;
     text-align: center;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+li a {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+p {
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 ul {
     display: flex;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0.5rem;
     overflow: hidden;
-    background-color: #333;
+    background-color: transparent;
+    gap: 1rem;
+    border-bottom: solid #1abc9c 0.75rem;
+    border-left: solid #1abc9c 1rem;
+    border-right: solid #1abc9c 1rem;
+
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+footer ul {
+    border-bottom: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    border-top: solid #1abc9c 0.75rem;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
 }
 
 li {
     flex: 1;
-    float: left;
 }
 
 li a {
     display: block;
+    border-radius: 10px;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    border: solid #1abc9c 2px;
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+    background-color: #1abc9c;
+    color: white; /* make sure text stays readable */
+}
+
+li a.active {
+    border-image: linear-gradient(to right, #1abc9c, #ff69b4);
+    border: solid transparent 2px;
+    background-origin: border-box;
+}
+
+.website-header {
+    margin-bottom: 2rem;
 }
 
 .active {
-    background-color: #04AA6D;
+    background-image: linear-gradient(to right, #1abc9c, #ff69b4);
 }
+
+@media (max-width: 915px){
+
+    main {
+        margin: 10%;
+    }
+
+    li a {
+        font-size: large;
+    }
+}
+
 
