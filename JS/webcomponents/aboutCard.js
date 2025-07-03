@@ -146,7 +146,8 @@ class AboutCard extends HTMLElement {
       });
     },
     {
-      threshold: 0.5 // pas aan indien nodig (bijv. 0.5 voor halve zichtbaarheid)
+      threshold: 0,
+      rootMargin: '0px 0px -25% 0px' 
     }
   );
 
