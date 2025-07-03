@@ -3,58 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rubens-Seegers Home</title>
-  <link rel="stylesheet" href="site.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="header_footer.css">
-
+  <link rel="stylesheet" href="/CSS/site.css">
+  <link rel="stylesheet" href="/CSS/text_settings.css">
 </head>
 <body>
-  <header>
-    <h1>Ruben Seegers</h1>
-    <nav>
-      <a href="index.html">
-        <button>Home</button>
-      </a>
-      <a href="index.html">
-        <button>Hobbies</button>
-      </a>
-      <a href="index.html">
-        <button>School</button>
-      </a>
-      <a href="index.html">
-        <button>Ervaring</button>
-      </a>
-    </nav>
+  <header id="main-header" class="website-header">
+    <ul>
+      <li><a class="active" href="/index.html">Home</a></li>
+      <li><a href="/Paginas/over.html">Over</a></li>
+      <li><a href="/Paginas/opleiding.html">Opleiding</a></li>
+      <li><a href="/Paginas/ervaring.html">Ervaring</a></li>
+      <li><a href="/Paginas/contact.html">Contact</a></li>
+    </ul>
   </header>
   
   <main>
-    <h1>Welkom op mijn website!</h1>
-    <div class="page">
-        <div class="pageDiv hidden-on-load fade-in-on-scroll">
-            <div class="textbox">
-              <p>Mijn naam is Ruben, deze website geeft je wat meer info over mij</p>
-              <p>Voor nu is het alleen deze mooie foto, verdere info komt later</p>
-            </div>
-            <div class="portretContainer">
-                <img class="portret" src="images/rubenOverhemd.jpg"/>
-            </div>
-        </div>
-    </div>
+    <h1>Welkom op de website van Ruben Seegers!</h1>
+    <h2>Deze website is bedoeld om je wat meer informatie te geven over mij.</h2>
+    <h2>Kijk gerust even rond bij de volgende pagina's</h2>
+    
+    <div class="info-card-container">
+      <reference-card
+        title="Over mij"
+        text="Hier krijg je wat meer info over mij!"
+        image="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Shrek_logo.jpg/330px-Shrek_logo.jpg"
+        pageLink="/Paginas/over.html">
+      </reference-card>
+      
+      <reference-card
+        title="Opleiding"
+        text="Hier krijg je wat meer info over mij!"
+        image="https://preview.redd.it/found-this-on-the-shrek-wiki-v0-7ghrhdgq2cf91.png?auto=webp&s=e31b5cecf6fdbc6e0c3a0d3fc7edcc52a64057bc"
+        pageLink="/Paginas/opleiding.html">
+      </reference-card>
 
-   
+      <reference-card
+        title="Ervaring"
+        text="Hier krijg je wat meer info over mij!"
+        image="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Shrek_logo.jpg/330px-Shrek_logo.jpg"
+        pageLink="/Paginas/ervaring.html">
+      </reference-card>
+
+      <reference-card
+        title="Contact"
+        text="Hier krijg je wat meer info over mij!"
+        image="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Shrek_logo.jpg/330px-Shrek_logo.jpg"
+        pageLink="/Paginas/contact.html">
+      </reference-card>
+
+    </div>
 
   </main>
 
-  <footer>
-       <p>Ruben Seegers</p>
-       -
-       <p>Weer naar boven?</p>
-       <a href="#top" style="color: white;">Klik hier</a>
-       
+  <footer id="main-footer">
+    <ul>
+      <li><a class="active" href="/index.html">Home</a></li>
+      <li><a href="/Paginas/over.html">Over</a></li>
+      <li><a href="/Paginas/opleiding.html">Opleiding</a></li>
+      <li><a href="/Paginas/ervaring.html">Ervaring</a></li>
+      <li><a href="/Paginas/contact.html">Contact</a></li>
+    </ul>
   </footer>
-  <script src="site.js">
-
-  </script>
+  <script src="/JS/header.js"></script>
+  <script src="/JS/webcomponents/referenceCard.js"></script>
 </body>
 </html>
