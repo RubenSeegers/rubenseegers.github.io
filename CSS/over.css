@@ -1,0 +1,7 @@
+.about-cards-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    margin: 2.5% 10% 10% 10%;
+}
