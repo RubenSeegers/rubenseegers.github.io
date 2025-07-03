@@ -1,0 +1,39 @@
+h1, h2 {
+    text-align: center;
+    text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+h1, li a {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p, h2 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li a {
+    font-size: xx-large;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+@media (max-width: 915px){
+    li a {
+        font-size: small;
+    }
+}
