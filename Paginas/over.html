@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/CSS/site.css">
   <link rel="stylesheet" href="/CSS/text_settings.css">
+  <link rel="stylesheet" href="/CSS/over.css">
 </head>
 <body>
   <header id="main-header" class="website-header">
@@ -18,8 +19,36 @@
   </header>
   
   <main>
-    <h1>Wie ben ik?</h1>
-    <p>Deze pagina wordt in de toekomst verder uitgewerkt</p>
+    <h1>Wie ben ik?<br>Scroll naar beneden en kom erachter!</h1>
+    <div class="about-cards-container">
+      <about-card
+        title="Korte introductie"
+        text="Ik ben Ruben, ik ben 23 jaar,
+        geboren in Hilversum, getogen in Loosdrecht."
+        image="/images/over/rubenPortret.jpeg">
+    
+      </about-card>
+      <about-card
+        title="Karakter"
+        text="Deze woorden vatten mij het best samen: <br><br>- Vriendelijk <br>- Behulpzaam <br>- Direct <br>- Eerlijk <br>- Hard werkend"
+        image="/images/over/karakter.jpg">
+    
+      </about-card>
+
+      <about-card
+        title="Hobbies"
+        text="Als ik tijd over heb besteed ik deze natuurlijk ook aan hobbies.<br><br>Ik heb wel een aantal dingen die ik leuk vind om mijn tijd mee te verdoen:<br><br>- Gamen<br>
+        - ICT projecten<br>- Verschillende bieren proeven<br>- Afspreken met vrienden<br>- Films/documentaires kijken<br>- Meer leren over geschiedenis"
+        image="/images/over/collageHobbies.jpg">
+      </about-card>
+
+      <about-card
+        title="Vriendschap"
+        text="Vriendschap is voor mij belangrijk, ik zie mijn vrienden als een tweede familie. <br><br>Ik doe daarom altijd mijn best voor ze en probeer regelmatig met ze af te spreken om onze banden goed te onderhouden.<br><br>
+        De meeste van mijn vrienden ken ik al jaren, en dit gaat voorlopig nog wel zo blijven."
+        image="/images/over/robbieenruubie.jpg">
+      </about-card>
+    </div>
   </main>
 
   <footer id="main-footer">
@@ -32,5 +61,6 @@
     </ul>
   </footer>
   <script src="/JS/header.js"></script>
+  <script src="/JS/webcomponents/aboutCard.js"></script>
 </body>
 </html>
