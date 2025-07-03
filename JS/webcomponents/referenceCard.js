@@ -6,7 +6,23 @@ class ReferenceCard extends HTMLElement {
     const title = this.getAttribute('title') || '';
     const text = this.getAttribute('text') || '';
     const image = this.getAttribute('image') || '';
-    const pageLink = this.getAttribute('pageLink') || '';
+    
+    let pageLink = this.getAttribute('pageLink');
+
+    //Als er geen pageLink is gegeven, dan maakt hij er een mail knop van
+    if (!pageLink) {
+      const today = new Date();
+      const day = String(today.getDate()).padStart(2, '0');
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const year = today.getFullYear();
+      const dateStr = `${day}-${month}-${year}`;
+
+      const subject = encodeURIComponent("Nieuw contact via website");
+      const body = encodeURIComponent(`Datum: ${dateStr}\nNaam: ---\nGelegenheid: ---`);
+
+      pageLink = `mailto:seegersruben@gmail.com?subject=${subject}&body=${body}`;
+    }
+
     this.shadowRoot.innerHTML = `
       <style>
         .card {
