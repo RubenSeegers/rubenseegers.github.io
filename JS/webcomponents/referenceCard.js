@@ -45,7 +45,22 @@ class ReferenceCard extends HTMLElement {
             text-align: center;
             margin-top: 0.5rem;
             margin-bottom: 0.5rem;
-            font-size: 1.25rem;
+            font-size: x-large;
+            text-shadow: 
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px  1px 0 #000,
+            1px  1px 0 #000;
+        }
+        
+        .card p {
+            text-align: center;
+            font-size: large;
+            text-shadow: 
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px  1px 0 #000,
+            1px  1px 0 #000;
         }
         
         a {

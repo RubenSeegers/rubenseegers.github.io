@@ -37,7 +37,6 @@ ul {
     display: flex;
     margin: 0;
     padding: 0.5rem;
-    overflow: hidden;
     background-image: linear-gradient(to right, #3b1f7b, #0f1042);   
     gap: 1rem;
     border-bottom: solid 	#7873f5 0.25rem;
@@ -64,8 +63,8 @@ li {
 
 li a {
     display: block;
-    border-radius: 10px;
-    padding: 10px 0.5rem;
+    border-radius: 0.625rem;
+    padding: 0.625rem 0.5rem;
     border: solid #7873f5 2px;
 }
 
