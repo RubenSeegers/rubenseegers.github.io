@@ -33,7 +33,7 @@ class ReferenceCard extends HTMLElement {
             border-radius: 1rem;
             padding: 1rem;
             max-width: 400px;
-            max-height: 500px;
+            height: 31.25rem;
             font-family: Arial, sans-serif;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             margin: 0 2rem;
@@ -50,7 +50,7 @@ class ReferenceCard extends HTMLElement {
 
         .card img {
           width: 100%;
-          max-height: 400px;
+          height: 25rem;
           object-fit: cover;
           border-radius: 1rem;
           display: block;

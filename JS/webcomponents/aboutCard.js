@@ -6,8 +6,9 @@ class AboutCard extends HTMLElement {
     const title = this.getAttribute('title')?.trim();
     const text = this.getAttribute('text')?.trim();
     const image = this.getAttribute('image')?.trim();
+    const colorAttr = this.getAttribute('colors')?.trim();
+    const colors = colorAttr?.split(',').map(c => c.trim()) ?? ['#9e7fe4', '#4169e1'];
 
-    // Start with the shared HTML and style
     const style = `
       <style>
         .card {
@@ -19,7 +20,7 @@ class AboutCard extends HTMLElement {
           opacity: 0;
           transform: translateY(10px);
           transition: opacity 1s ease-in, transform 1s ease-in;
-          background-image: linear-gradient(to right, #9e7fe4, #4169e1);
+          background-image: linear-gradient(to right, ${colors[0]}, ${colors[1]});
           border-radius: 1rem;
           padding: 1rem;
           font-family: Arial, sans-serif;
@@ -38,8 +39,8 @@ class AboutCard extends HTMLElement {
         }
 
         .card h3 {
-          text-align: left;
-          margin: 1rem 0 0 0;
+          text-align: center;
+          margin: 1rem 0 1rem 0;
           font-size: xx-large;
           font-style: italic;
           text-shadow: 
@@ -51,12 +52,13 @@ class AboutCard extends HTMLElement {
 
         .card p {
           text-align: left;
-          font-size: xx-large;
+          font-size: x-large;
           text-shadow: 
             -1px -1px 0 #000,  
              1px -1px 0 #000,
             -1px  1px 0 #000,
              1px  1px 0 #000;
+          margin: 0;
         }
 
         .content {
@@ -79,7 +81,7 @@ class AboutCard extends HTMLElement {
         @media (max-width: 786px) {
           .card {
             width: 90%;
-            min-width: 0;
+            min-width: 75vw;
           }
 
           .card h3 {
@@ -99,11 +101,8 @@ class AboutCard extends HTMLElement {
       </style>
     `;
 
-    // Build up inner HTML
     let html = `<div class="card">`;
-    if (title) {
-      html += `<h3>${title}</h3>`;
-    }
+    if (title) html += `<h3>${title}</h3>`;
 
     if (text || image) {
       html += `<div class="content">`;
@@ -124,34 +123,34 @@ class AboutCard extends HTMLElement {
         `;
       }
 
-      html += `</div>`; // end .content
+      html += `</div>`;
     }
 
-    html += `</div>`; // end .card
+    html += `</div>`;
 
     this.shadowRoot.innerHTML = style + html;
   }
 
   connectedCallback() {
-  const card = this.shadowRoot.querySelector('.card');
+    const card = this.shadowRoot.querySelector('.card');
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          card.classList.add('visible');
-        } else {
-          card.classList.remove('visible');
-        }
-      });
-    },
-    {
-      threshold: 0,
-      rootMargin: '0px 0px -25% 0px' 
-    }
-  );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            card.classList.add('visible');
+          } else {
+            card.classList.remove('visible');
+          }
+        });
+      },
+      {
+        threshold: 0,
+        rootMargin: '0px 0px -25% 0px' 
+      }
+    );
 
-  observer.observe(this);
+    observer.observe(this);
   }
 }
 
