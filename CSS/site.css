@@ -73,6 +73,8 @@ li a:hover:not(.active) {
     box-shadow: 
         0 0 10px #7873f5,
         0 0 10px #1abc9c;
+    border: solid transparent 2px;
+    background-origin: border-box;
 }
 
 li a.active {
