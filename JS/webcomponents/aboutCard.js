@@ -24,6 +24,7 @@ class AboutCard extends HTMLElement {
           border-radius: 1rem;
           padding: 1rem;
           font-family: Arial, sans-serif;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.9);
         }
 
         .card.visible {

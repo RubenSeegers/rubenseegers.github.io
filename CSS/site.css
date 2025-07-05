@@ -84,6 +84,9 @@ li a.active {
 
 .active {
     background-image: linear-gradient(to right, #1abc9c, #7873f5);
+    box-shadow: 
+        0 0 10px #7873f5,
+        0 0 10px #1abc9c;
 }
 
 .info-card-container{
