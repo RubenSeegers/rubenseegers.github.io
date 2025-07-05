@@ -70,6 +70,9 @@ li a {
 
 li a:hover:not(.active) {
     background-image: linear-gradient(to right, #1abc9c, #7d5ec2);
+    box-shadow: 
+        0 0 10px #7873f5,
+        0 0 10px #1abc9c;
 }
 
 li a.active {
