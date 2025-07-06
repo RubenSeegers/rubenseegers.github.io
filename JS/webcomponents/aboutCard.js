@@ -61,13 +61,9 @@ class AboutCard extends HTMLElement {
         }
 
         .card p {
+          font-family: "Oswald", sans-serif;
           text-align: left;
           font-size: x-large;
-          text-shadow: 
-            -1px -1px 0 #000,  
-             1px -1px 0 #000,
-            -1px  1px 0 #000,
-             1px  1px 0 #000;
           margin: 0;
         }
 
