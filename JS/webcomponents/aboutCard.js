@@ -19,7 +19,7 @@ class AboutCard extends HTMLElement {
           min-width: 60rem;
           opacity: 0;
           transform: translateY(10px);
-          transition: opacity 1s ease-in, transform 1s ease-in;
+          transition: opacity 1s ease-in, transform 0.3s ease-in;
           background-image: linear-gradient(to right, ${colors[0]}, ${colors[1]});
           border-radius: 1rem;
           padding: 1rem;
@@ -30,6 +30,12 @@ class AboutCard extends HTMLElement {
         .card.visible {
           opacity: 1;
           transform: translateY(0);
+        }
+
+        .card.focused {
+          transform: translateY(0) scale(1.1);
+          z-index: 10;
+          position: relative;
         }
 
         .card img {
@@ -145,14 +151,37 @@ class AboutCard extends HTMLElement {
           }
         });
       },
-      {
-        threshold: 0,
-        rootMargin: '0px 0px -25% 0px' 
-      }
+      { threshold: 0.1 }
     );
 
     observer.observe(this);
+
+    const checkFocus = () => {
+      const rect = this.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const centerZoneTop = windowHeight / 3;
+      const centerZoneBottom = 2 * windowHeight / 3;
+      const elementMiddle = rect.top + rect.height / 2;
+
+      if (elementMiddle >= centerZoneTop && elementMiddle <= centerZoneBottom) {
+        card.classList.add('focused');
+      } else {
+        card.classList.remove('focused');
+      }
+    };
+
+    checkFocus();
+
+    window.addEventListener('scroll', checkFocus);
+    window.addEventListener('resize', checkFocus);
+
+    // Optional cleanup if needed
+    this._cleanupFocusCheck = () => {
+      window.removeEventListener('scroll', checkFocus);
+      window.removeEventListener('resize', checkFocus);
+    };
   }
+
 }
 
 customElements.define('about-card', AboutCard);
