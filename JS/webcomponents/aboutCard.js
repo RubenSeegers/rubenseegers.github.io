@@ -19,7 +19,10 @@ class AboutCard extends HTMLElement {
           min-width: 60rem;
           opacity: 0;
           transform: translateY(10px);
-          transition: opacity 1s ease-in, transform 0.3s ease-in;
+          transition: 
+            opacity 1s ease-in, 
+            transform 0.3s ease-in;
+
           background-image: linear-gradient(to right, ${colors[0]}, ${colors[1]});
           border-radius: 1rem;
           padding: 1rem;
