@@ -64,7 +64,7 @@ class ContactReferenceCard extends HTMLElement {
             display: block;
             }
 
-            .card h3, .card p {
+            .card h3 {
                 text-align: center;
                 margin: 0.5rem 0;
                 text-shadow: 
@@ -79,7 +79,10 @@ class ContactReferenceCard extends HTMLElement {
             }
 
             .card p {
+                font-family: "Oswald", sans-serif;
                 font-size: large;
+                text-align: center;
+                margin: 0.5rem 0;
             }
 
             @media (max-width: 915px){

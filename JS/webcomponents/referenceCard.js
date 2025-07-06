@@ -77,13 +77,9 @@ class ReferenceCard extends HTMLElement {
         }
 
         .card p {
+          font-family: "Oswald", sans-serif;
           text-align: center;
           font-size: large;
-          text-shadow: 
-            -1px -1px 0 #000,  
-             1px -1px 0 #000,
-            -1px  1px 0 #000,
-             1px  1px 0 #000;
         }
 
         @media (max-width: 915px){
