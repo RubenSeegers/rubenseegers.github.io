@@ -89,7 +89,7 @@ class AboutCard extends HTMLElement {
         }
 
         .text-container a {
-          color: #0066cc;
+          color: #e05f23ff;
           text-decoration: underline;
         }
 
