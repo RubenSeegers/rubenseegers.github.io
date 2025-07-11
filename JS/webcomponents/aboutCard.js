@@ -6,8 +6,16 @@ class AboutCard extends HTMLElement {
     const title = this.getAttribute('title')?.trim();
     const text = this.getAttribute('text')?.trim();
     const image = this.getAttribute('image')?.trim();
+    const hasImage = !!image;
+
     const colorAttr = this.getAttribute('colors')?.trim();
+    const gradientType = this.getAttribute('gradienttype')?.trim().toLowerCase();
+
     const colors = colorAttr?.split(',').map(c => c.trim()) ?? ['#9e7fe4', '#4169e1'];
+
+    const gradient = (gradientType === 'radial')
+      ? `radial-gradient(ellipse, ${colors[0]}, ${colors[1]})`
+      : `linear-gradient(to right, ${colors[0]}, ${colors[1]})`;
 
     const style = `
       <style>
@@ -23,7 +31,7 @@ class AboutCard extends HTMLElement {
             opacity 1s ease-in, 
             transform 0.3s ease-in;
 
-          background-image: linear-gradient(to right, ${colors[0]}, ${colors[1]});
+          background-image: ${gradient};
           border-radius: 1rem;
           padding: 1rem;
           font-family: Arial, sans-serif;
@@ -62,7 +70,7 @@ class AboutCard extends HTMLElement {
 
         .card p {
           font-family: "Oswald", sans-serif;
-          text-align: left;
+          text-align: ${hasImage ? 'left' : 'center'};
           font-size: x-large;
           margin: 0;
         }
@@ -72,6 +80,7 @@ class AboutCard extends HTMLElement {
           flex-direction: row;
           flex-grow: 1;
           gap: 1rem;
+          align-items: center;
         }
 
         .text-container, .image-container {
@@ -79,9 +88,9 @@ class AboutCard extends HTMLElement {
           box-sizing: border-box;
         }
 
-        a {
-          color: white;
-          text-decoration: none;
+        .text-container a {
+          color: #0066cc;
+          text-decoration: underline;
         }
 
         @media (max-width: 786px) {
@@ -97,7 +106,7 @@ class AboutCard extends HTMLElement {
             flex-direction: column;
           }
           .content p {
-            text-align: left;
+            text-align: center;
           }
 
           .card p {
@@ -111,35 +120,35 @@ class AboutCard extends HTMLElement {
     if (title) html += `<h3>${title}</h3>`;
 
     if (text || image) {
-      html += `<div class="content">`;
+        html += `<div class="content">`;
 
-      if (text) {
-        html += `
-          <div class="text-container">
-            <p>${text}</p>
-          </div>
-        `;
-      }
+        if (text) {
+          html += `
+            <div class="text-container">
+              <p>${text}</p>
+            </div>
+          `;
+        }
 
-      if (image) {
-        html += `
-          <div class="image-container">
-            <img src="${image}" alt="Card image">
-          </div>
-        `;
+        if (image) {
+          html += `
+            <div class="image-container">
+              <img src="${image}" alt="Card image">
+            </div>
+          `;
+        }
+
+        html += `</div>`;
       }
 
       html += `</div>`;
+
+      this.shadowRoot.innerHTML = style + html;
     }
-
-    html += `</div>`;
-
-    this.shadowRoot.innerHTML = style + html;
-  }
 
   connectedCallback() {
     const card = this.shadowRoot.querySelector('.card');
-
+    this.removeAttribute('title'); //anders krijg je bij het hoveren van het element steeds de titel te zien.
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -174,13 +183,11 @@ class AboutCard extends HTMLElement {
     window.addEventListener('scroll', checkFocus);
     window.addEventListener('resize', checkFocus);
 
-    // Optional cleanup if needed
     this._cleanupFocusCheck = () => {
       window.removeEventListener('scroll', checkFocus);
       window.removeEventListener('resize', checkFocus);
     };
   }
-
 }
 
 customElements.define('about-card', AboutCard);

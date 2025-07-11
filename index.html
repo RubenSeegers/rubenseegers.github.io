@@ -6,7 +6,7 @@
   <meta name="description" content="Welkom op de homepagina! Deze website is bedoeld om je meer informatie te geven over Ruben Seegers.">
   <link rel="stylesheet" href="/CSS/site.css">
   <link rel="stylesheet" href="/CSS/text_settings.css">
-  <link rel="icon" href="/images/cute-pumpkin.png" type="image/png">
+  <link rel="icon" href="/images/cuteturtle.png" type="image/png">
   <title>Home - Ruben Seegers</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
@@ -22,9 +22,14 @@
   </header>
   
   <main>
-    <h1>Welkom op de website van Ruben Seegers!</h1>
-    <h2>Deze website is bedoeld om je wat meer informatie te geven over mij.</h2>
-    <h2>Kijk gerust even rond op de volgende paginas.</h2>
+    <div class="about-cards-container" style="margin-bottom: 0;">
+      <about-card
+      title="Welkom op de website van Ruben Seegers!"
+      text="Deze website is bedoeld om wat meer informatie te geven over mij <br> Kijk gerust even rond op de volgende pagina's"
+      gradienttype="radial">
+
+    </about-card>
+    </div>
     
     <div class="info-card-container">
       <reference-card
@@ -70,5 +75,6 @@
   </footer>
   <script src="/JS/header.js"></script>
   <script src="/JS/webcomponents/referenceCard.js"></script>
+  <script src="/JS/webcomponents/aboutCard.js"></script>
 </body>
 </html>

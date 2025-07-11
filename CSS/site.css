@@ -100,10 +100,18 @@ li a.active {
     margin: 2rem 0;
 }
 
+.about-cards-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    margin: 2.5% 10% 10% 10%;
+}
+
 @media (max-width: 915px){
 
     main {
-        margin: 10% 10% 0 10%;
+        margin: 10%;
     }
 
     .website-header {
@@ -116,6 +124,7 @@ li a.active {
 
     .info-card-container {
         flex-direction: column;
+        margin: 2rem 0 0 0;
     }
 }
 
