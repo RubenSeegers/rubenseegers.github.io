@@ -94,8 +94,8 @@ main {
 
 /* CSS for the mobile trigger */
 .info-card.expanded {
-        max-height: 100rem; /* enough to show full content */
-        transition: max-height 2s ease;
+    max-height: 100rem; /* enough to show full content */
+    transition: max-height 2s ease;
 }
 
 .banner-wrapper.visible {
@@ -111,7 +111,7 @@ main {
 .pointer {
     height: 3rem;
     border-radius: var(--border-radius-value);
-    animation: wiggle 1s ease infinite;
+    animation: wiggle 1.5s ease infinite;
     margin: 0;
 }
 
@@ -125,6 +125,7 @@ main {
 
 .toggler{
     display: none;
+    animation: pressed 1.5s ease infinite;
 }
 
 .toggler.used{
@@ -133,13 +134,25 @@ main {
 
 @keyframes wiggle {
   0%   { transform: translateY(0); }
-  15%  { transform: translateY(-10px); }
-  30%  { transform: translateY(10px); }
-  45%  { transform: translateY(-10px); }
-  60%  { transform: translateY(10px); }
-  75%  { transform: translateY(-10px); }
+  50%  { transform: translateY(10px); }
   100% { transform: translateY(0); }
 }
+
+@keyframes pressed {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
 
 @media (max-width: 768px){
     .info-card {
